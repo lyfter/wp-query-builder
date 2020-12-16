@@ -1,0 +1,15 @@
+{
+    "name": "peters97/wp-query-builder",
+    "authors": [
+        {
+            "name": "Daan Peters",
+            "email": "daan@lyfter.nl"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "QueryBuilder\\": "src/"
+        }
+    }
+}
