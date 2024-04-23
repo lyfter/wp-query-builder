@@ -25,7 +25,7 @@ WpQuery::build()
 Run the following in your terminal to install the package with Composer.
 
 ```
-$ composer require peters97/wp-query-builder
+$ composer require lyfter/wp-query-builder
 ```
 
 The package uses [PSR-4](https://www.php-fig.org/psr/psr-4/) autoloading and can be used with the Composer's autoloader. Below is a basic example of getting started, though your setup may be different depending on how you are using Composer.

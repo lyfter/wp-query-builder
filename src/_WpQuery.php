@@ -1,17 +1,15 @@
 <?php
-declare(strict_types=1);
+
 
 namespace Lyfter\QueryBuilder;
 
-use WP_Query;
-
 class WpQuery
 {
-    protected WP_Query $queryObject;
+    private \WP_Query $queryObject;
 
     public function __construct()
     {
-        $this->queryObject = new WP_Query();
+        $this->queryObject = new \WP_Query();
     }
 
     public static function build(): WpQuery
@@ -19,12 +17,12 @@ class WpQuery
         return new static();
     }
 
-    public function getQueryObject(): WP_Query
+    public function getQueryObject(): \WP_Query
     {
         return $this->queryObject;
     }
 
-    public function get(string $fields = ''): array
+    public function get($fields = '')
     {
         if ($fields) {
             $this->fields($fields);
@@ -33,29 +31,29 @@ class WpQuery
         return $this->queryObject->get_posts();
     }
 
-    public function setArgument(string $key, int|string|array $value): static
+    public function setArgument($key, $value)
     {
         $this->queryObject->set($key, $value);
 
         return $this;
     }
 
-    public function fields(string $fields): static
+    public function fields($fields)
     {
         return $this->setArgument('fields', $fields);
     }
 
-    public function type(array | string $type): static
+    public function type($type)
     {
         return $this->setArgument('post_type', $type);
     }
 
-    public function status(array | string $status): static
+    public function status($status)
     {
         return $this->setArgument('post_status', $status);
     }
 
-    public function limit(int $limit): static
+    public function limit($limit)
     {
         return $this->setArgument('posts_per_page', $limit);
     }
