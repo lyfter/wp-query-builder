@@ -33,7 +33,7 @@ The package uses [PSR-4](https://www.php-fig.org/psr/psr-4/) autoloading and can
 ```php
 require __DIR__ . '/vendor/autoload.php'; // Not required when using bedrock
 
-use QueryBuilder\WpQuery;
+use Lyfter\QueryBuilder\WpQuery;
 
 $posts = WpQuery::build()
     ->type(['post', 'page'])
